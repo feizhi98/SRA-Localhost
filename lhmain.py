@@ -1,20 +1,17 @@
 import streamlit as st
 import pymongo
 
-client = pymongo.MongoClient("mongodb://localhost:123456@localhost:27017/pizzaRes")
-db = client["pizzaRes"]
-pissa = db["pissa"]
+# Get the credentials from the user
+username = st.text_input("Enter MongoDB username")
+password = st.text_input("Enter MongoDB password", type="password")
+database_name = st.text_input("Enter MongoDB database name")
 
-# Accept user input
-user_input = st.text_input("Enter data to be stored in MongoDB:")
+# Connect to MongoDB
+client = pymongo.MongoClient(f"mongodb+srv://{username}:{password}@cluster0.mongodb.net/{database_name}?retryWrites=true&w=majority")
+db = client[database_name]
 
-if st.button("Submit"):
-    try:
-        # Insert the data into MongoDB
-        pissa.insert_one({"data": user_input})
-        st.success("Data has been stored in MongoDB!")
-    except pymongo.errors.PyMongoError as e:
-        st.error("An error occurred while storing the data in MongoDB:", e)
-    finally:
-        # Close the MongoDB client connection
-        client.close()
+# Use the database
+collection = db["collection_name"]
+results = collection.find()
+for result in results:
+    st.write(result)
