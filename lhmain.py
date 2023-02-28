@@ -1,7 +1,7 @@
 import pymongo
 
 # Connect to the local MongoDB instance
-client = pymongo.MongoClient("mongodb://localhost:27017/")
+client = pymongo.MongoClient("mongodb://localhost@localhost:27017/pizzaRes")
 
 # Select the database and collection you want to use
 db = client["pizzaRes"]
