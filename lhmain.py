@@ -7,7 +7,7 @@ password = st.text_input("Enter MongoDB password", type="password")
 database_name = st.text_input("Enter MongoDB database name")
 
 # Connect to MongoDB
-client = pymongo.MongoClient(f""mongodb://localhost:123456@localhost:27017/pizzaRes")
+client = pymongo.MongoClient(f"mongodb://localhost:123456@localhost:27017/pizzaRes")
 db = client[database_name]
 
 # Use the database
