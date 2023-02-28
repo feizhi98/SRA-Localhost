@@ -3,7 +3,7 @@ import pymongo
 
 # Connect to MongoDB
 client = pymongo.MongoClient("mongodb://localhost:27017/")
-db = client["pizzaRes"]
+db = client["pizzaResss"]
 
 # Check if the connection was successful
 if db is not None:
