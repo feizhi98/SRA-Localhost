@@ -92,7 +92,9 @@ def assessment():
     }
         
     # Save output to MongoDB
-    save_to_mergeAssessment(output)
+    # save_to_mergeAssessment(output)
+    mergeAssessment = db["mergeAssessment"]
+    mergeAssessment.insert_one(output)
     
 # Save to mergeAssessment
 def save_to_mergeAssessment(output):
