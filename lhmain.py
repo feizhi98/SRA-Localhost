@@ -1,6 +1,8 @@
 import streamlit as st
 import pymongo
 
+
+
 # Set page configurations
 st.set_page_config(page_title="Student Registration Form", page_icon=":mortar_board:")
 
