@@ -96,7 +96,7 @@ def assessment():
     
 # Save to mergeAssessment
 def save_to_mergeAssessment(output):
-    db.["mergeAssessment"].insert_one(output)
+    db["mergeAssessment"].insert_one(output)
     
 
 # Save to mergeVle
