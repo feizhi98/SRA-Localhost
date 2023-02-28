@@ -6,7 +6,7 @@ st.set_page_config(page_title="Student Registration Form", page_icon=":mortar_bo
 
 #Connect to MongoDB
 client = pymongo.MongoClient("mongodb://localhost:27017")
-db = client.SRA_Project
+db = client["SRA_Project"]
 
 # Save to mergeStudRegAndCourses
 def save_to_mergeStudRegAndCourses(output):
@@ -94,11 +94,13 @@ def assessment():
     }
         
     # Save output to MongoDB
-    save_to_mergeAssessment(output)
+   # save_to_mergeAssessment(output)
+    mergeAssessment = db["mergeAssessment"]
 
 # Save to mergeVle
 def save_to_mergeVle(output):
     db.mergeVle.insert_one(output)
+ 
     
 # Define the function to display the Vle page
 def vle():
