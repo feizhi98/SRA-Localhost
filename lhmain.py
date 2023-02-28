@@ -6,7 +6,7 @@ st.set_page_config(page_title="Student Registration Form", page_icon=":mortar_bo
 
 #Connect to MongoDB
 client = pymongo.MongoClient("mongodb://localhost:27017")
-db = client.SRA
+db = client.SRA_Project
 
 # Save to mergeStudRegAndCourses
 def save_to_mergeStudRegAndCourses(output):
