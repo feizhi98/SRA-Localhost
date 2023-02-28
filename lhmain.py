@@ -82,7 +82,7 @@ def assessment():
                 st.write(result)
                 
     # Generate output
-    output = {
+    outputA = {
         "code_presentation" : code_presentation,
         "id_student" : int(studentID),
         "Result" : result,
@@ -94,11 +94,11 @@ def assessment():
     # Save output to MongoDB
     # save_to_mergeAssessment(output)
     mergeAssessment = db["mergeAssessment"]
-    mergeAssessment.insert_one(output)
+    mergeAssessment.insert_one(outputA)
     
 # Save to mergeAssessment
-def save_to_mergeAssessment(output):
-    db["mergeAssessment"].insert_one(output)
+#def save_to_mergeAssessment(output):
+#    db["mergeAssessment"].insert_one(output)
     
 
 # Save to mergeVle
