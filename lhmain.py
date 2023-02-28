@@ -48,9 +48,7 @@ def registration_form():
     save_to_mergeStudRegAndCourses(output)
             
 
-# Save to mergeAssessment
-def save_to_mergeAssessment(output):
-    db.mergeAssessment.insert_one(output)
+
     
 # Define the function to display the Assessment form
 def assessment():
@@ -94,8 +92,12 @@ def assessment():
     }
         
     # Save output to MongoDB
-   # save_to_mergeAssessment(output)
-    mergeAssessment = db["mergeAssessment"]
+    save_to_mergeAssessment(output)
+    
+# Save to mergeAssessment
+def save_to_mergeAssessment(output):
+    db.["mergeAssessment"].insert_one(output)
+    
 
 # Save to mergeVle
 def save_to_mergeVle(output):
