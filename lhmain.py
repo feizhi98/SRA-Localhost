@@ -1,7 +1,7 @@
 import streamlit as st
 import pymongo
 
-client = pymongo.MongoClient("mongodb://localhost:27017/")
+client = pymongo.MongoClient("mongodb://localhost:123456@<localhost>:<27017>/<pizzaRes>")
 db = client["pizzaRes"]
 pissa = db["pissa"]
 
