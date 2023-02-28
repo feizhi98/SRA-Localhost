@@ -5,7 +5,7 @@ import pymongo
 st.set_page_config(page_title="Student Registration Form", page_icon=":mortar_board:")
 
 #Connect to MongoDB
-mongoClient = MongoClient("mongodb://localhost:27017")
+client = pymongo.MongoClient("mongodb://localhost:27017")
 db = client.SRA
 
 # Save to mergeStudRegAndCourses
